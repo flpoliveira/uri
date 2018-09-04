@@ -1,0 +1,21 @@
+tipoOperacao = input()
+
+matriz = []
+
+for i in range (12):
+    linha = []
+    for j in range(12):
+        linha.append(float(input()))
+    matriz.append(linha)
+
+soma = 0.0
+contador = 0
+for i in range(12):
+    for j in range(12):
+        if (j < i and i < 11 - j and j < 5):
+            soma += matriz[i][j]
+            contador += 1
+if(tipoOperacao == 'S'):
+    print("%.1f" % soma)
+else:
+    print("%.1f" % (soma / contador))
